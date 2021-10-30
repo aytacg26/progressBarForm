@@ -1,0 +1,31 @@
+@import '../../scss/mixins.scss';
+@import '../../scss/variables.scss';
+
+.formGroup {
+  @include form-group;
+}
+
+.formGroup select {
+  @include form-element;
+}
+
+.formGroup label {
+  @include form-label;
+}
+
+.formGroup select:focus {
+  @include form-element-focus;
+}
+
+.formGroup select.invalid {
+  border: 1px solid $warning-color;
+  background-color: $warning-background-color;
+}
+
+.formGroup select.invalid:focus {
+  box-shadow: 0 0 6px $warning-color;
+}
+
+.formGroup select.invalid::placeholder {
+  color: $invalid-placeholder-color;
+}
