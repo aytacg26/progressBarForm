@@ -41,21 +41,21 @@ const UserForm = () => {
   const handleBirthMonthChange = (e: eventParam) => {
     const selected = e.target.value;
     if (selected.length > 0) {
-      setMonth(selected);
       setIsValidMonth(true);
     } else {
       setIsValidMonth(false);
     }
+    setMonth(selected);
   };
 
   const handleBirthYearChange = (e: eventParam) => {
     const selected = e.target.value;
     if (selected.length > 0) {
-      setYear(selected);
       setIsValidYear(true);
     } else {
       setIsValidYear(false);
     }
+    setYear(selected);
   };
 
   return (

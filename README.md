@@ -7,3 +7,6 @@ fields, whenever a field filled by user, if the entered value is valid,
 progress bar will move forward, and if user deletes the value at filed,
 it will move backward. Not completed yet, but will be completed within
 2 days (at free times).
+
+For form, after completion of all validations etc. instead of multi useState,
+it will be refactored to useReducer.
