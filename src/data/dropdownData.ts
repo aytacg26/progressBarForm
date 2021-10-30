@@ -13,7 +13,7 @@ export const monthOptions = [
   { value: 'Dec', text: 'December', id: 'month-0012-dec' },
 ];
 
-const createYearOptions = (minAge, maxAge) => {
+const createYearOptions = (minAge: number, maxAge: number) => {
   const today = new Date();
   const todayYear = today.getFullYear();
 
