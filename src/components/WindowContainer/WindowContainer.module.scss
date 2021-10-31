@@ -1,0 +1,11 @@
+@import '../../scss/variables.scss';
+
+.WindowContainer {
+  max-width: 90vw;
+  width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid $site-blue;
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px black;
+}

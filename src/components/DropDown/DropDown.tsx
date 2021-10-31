@@ -7,6 +7,7 @@ interface IProps {
   label?: string;
   emptyText?: string;
   isValid?: boolean;
+  name?: string;
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
@@ -16,6 +17,7 @@ const DropDown = ({
   label,
   emptyText,
   isValid,
+  name,
   onChange,
 }: IProps) => {
   return (
@@ -25,6 +27,7 @@ const DropDown = ({
         onChange={onChange}
         className={!isValid ? `${classes.invalid}` : ''}
         value={value}
+        name={name}
       >
         <option value=''>{emptyText}</option>
         {options.map((option) => (

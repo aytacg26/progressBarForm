@@ -1,0 +1,30 @@
+.TopMessage {
+  width: 100%;
+  margin-bottom: 65px;
+
+  &.Success h3 {
+    color: #73af55;
+  }
+
+  &.Error h3 {
+    color: #d06079;
+  }
+}
+
+.BottomMessage {
+  min-height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 25px;
+
+  &.Success p {
+    color: rgb(0, 82, 14);
+  }
+
+  &.Error p {
+    color: #ccc;
+  }
+}

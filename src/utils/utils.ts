@@ -22,11 +22,15 @@ export const emailValidation = (email: string) => {
   return false;
 };
 
-export const textValidation = (text: string, maxLength: number = 60) => {
+export const textValidation = (
+  text: string,
+  minLength: number = 2,
+  maxLength: number = 60
+) => {
   //eslint-disable-next-line
   const specialCharRegex = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
   const hasSpecialChars = specialCharRegex.test(text);
-  const hasValidLength = text.length >= 2 && text.length <= maxLength;
+  const hasValidLength = text.length >= minLength && text.length <= maxLength;
 
   return hasValidLength && !hasSpecialChars;
 };

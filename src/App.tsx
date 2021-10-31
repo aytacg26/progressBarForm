@@ -1,10 +1,10 @@
-import UserForm from './components/FormContainer/UserForm';
 import './App.css';
+import FormContainer from './components/FormContainer/FormContainer';
 
 const App = () => {
   return (
     <div className='App'>
-      <UserForm />
+      <FormContainer />
     </div>
   );
 };
