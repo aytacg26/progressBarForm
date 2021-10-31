@@ -1,0 +1,45 @@
+@import '../../scss/mixins.scss';
+@import '../../scss/variables.scss';
+
+.Button {
+  width: max-content;
+  margin: 15px auto;
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: $site-blue;
+  color: #fff;
+  font-weight: 600;
+  border: 2px solid transparent;
+  outline: none;
+  border-radius: 6px;
+}
+
+.Button:focus {
+  @include form-element-focus;
+  border: 2px solid rgb(0, 204, 255);
+}
+
+.Button:hover {
+  background-color: #fff;
+  color: rgb(0, 204, 255);
+  border: 2px solid rgb(0, 204, 255);
+  transition: all 0.35s ease-in-out;
+}
+
+.Button.Disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.Button.Disabled:focus {
+  border: 0 none;
+  box-shadow: 0 0 0 #fff;
+}
+
+.Button.Disabled:hover {
+  background-color: #ccc;
+  color: #fff;
+  cursor: not-allowed;
+  border: 2px solid transparent;
+}

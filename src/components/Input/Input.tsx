@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classes from './Input.module.scss';
 
 interface IProps {

@@ -10,7 +10,7 @@ const ProgressBar = ({ progressValue }: IProps) => {
 
   useEffect(() => {
     let timer: any;
-    if (currentVal < progressValue) {
+    if (currentVal < progressValue && currentVal !== 100) {
       timer = setTimeout(() => {
         setCurrentValue((prevState) => prevState + 1);
       }, 45);

@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import Input from '../Input/Input';
 import DropDown from '../DropDown/DropDown';
+import Button from '../Button/Button';
 import { monthOptions, yearOptions } from '../../data/dropdownData';
+import { emailValidation, textValidation } from '../../utils/utils';
 import classes from './UserForm.module.scss';
 
 type eventParam =
@@ -12,22 +14,33 @@ type eventParam =
 const UserForm = () => {
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
+  const [email, setEmail] = useState('');
+  const [currentJob, setCurrentJob] = useState('');
   const [month, setMonth] = useState('');
   const [year, setYear] = useState('');
   const [isValidMonth, setIsValidMonth] = useState(false);
   const [isValidYear, setIsValidYear] = useState(false);
+
   //const [isTouched, setIsTouched] = useState(false);
-  let isValidName = name.length >= 2;
-  let isValidSurname = surname.length >= 2;
+  let isValidEmail = emailValidation(email);
+  let isValidJob = textValidation(currentJob, 80);
+  let isValidName = textValidation(name);
+  let isValidSurname = textValidation(surname);
   const nameProgress = isValidName ? 1 : 0;
   const surnameProgress = isValidSurname ? 1 : 0;
   const monthProgress = isValidMonth ? 1 : 0;
   const yearProgress = isValidYear ? 1 : 0;
+  const emailProgress = isValidEmail ? 1 : 0;
+  const jobProgress = isValidJob ? 1 : 0;
+  const progressSlicePerField = Math.ceil(100 / 6);
   const progress =
-    nameProgress * 25 +
-    surnameProgress * 25 +
-    monthProgress * 25 +
-    yearProgress * 25;
+    progressSlicePerField *
+    (nameProgress +
+      surnameProgress +
+      monthProgress +
+      yearProgress +
+      emailProgress +
+      jobProgress);
 
   const handleNameEntry = (e: eventParam) => {
     setName(e.target.value);
@@ -58,8 +71,40 @@ const UserForm = () => {
     setYear(selected);
   };
 
+  const handleEmailEntry = (e: eventParam) => {
+    const emailAddress = e.target.value;
+    setEmail(emailAddress);
+  };
+
+  const handleCurrentJobEntry = (e: eventParam) => {
+    const currJob = e.target.value;
+    setCurrentJob(currJob);
+  };
+
+  const formSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const isValidData =
+      isValidName &&
+      isValidSurname &&
+      isValidEmail &&
+      isValidMonth &&
+      isValidYear &&
+      isValidJob;
+
+    if (isValidData) {
+      console.log({
+        name,
+        surname,
+        email,
+        currentJob,
+        birthData: { month, year },
+      });
+    }
+  };
+
   return (
-    <form>
+    <form onSubmit={formSubmitHandler} className={classes.FormContainer}>
+      <h1>Registration Form</h1>
       <ProgressBar progressValue={progress} />
       <Input
         type='text'
@@ -75,7 +120,7 @@ const UserForm = () => {
         onChange={handleSurnameEntry}
         isValid={isValidSurname}
         label='Surname'
-        placeholder='Please enter your name...'
+        placeholder='Please enter your surname...'
       />
       <DropDown
         options={monthOptions}
@@ -93,6 +138,28 @@ const UserForm = () => {
         isValid={isValidYear}
         value={year}
       />
+      <Input
+        type='text'
+        value={email}
+        onChange={handleEmailEntry}
+        isValid={isValidEmail}
+        label='Email'
+        placeholder='Please enter your email address...'
+      />
+      <Input
+        type='text'
+        value={currentJob}
+        onChange={handleCurrentJobEntry}
+        isValid={isValidJob}
+        label='Current Job (Please do not use special characters (ex: &amp;,?,!)'
+        placeholder='Please enter your current job...'
+      />
+      {progress < 100 && (
+        <Button type='button' disabled>
+          Please Complete Form
+        </Button>
+      )}
+      {progress >= 100 && <Button type='submit'>Register</Button>}
     </form>
   );
 };
