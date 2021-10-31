@@ -17,3 +17,5 @@ in case of any server error (in real usage), it will show error window and will 
 form.
 
 Click [here](https://aytacg26.github.io/progressBarForm/)
+
+[Progress Bar Form Build Sample](https://aytacg26.github.io/progressBarForm/)
