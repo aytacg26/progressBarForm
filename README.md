@@ -10,3 +10,10 @@ it will move backward. Not completed yet, but will be completed within
 
 For form, after completion of all validations etc. instead of multi useState,
 it will be refactored to useReducer.
+
+Click [here](https://aytacg26.github.io/progressBarForm/) to see the working example of form.
+data is not being send any server, currently for any registration it uses static true value,
+in case of any server error (in real usage), it will show error window and will not clear the
+form.
+
+Click [here](https://aytacg26.github.io/progressBarForm/)
