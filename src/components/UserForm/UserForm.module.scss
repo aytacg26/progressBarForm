@@ -3,13 +3,13 @@
 .FormContainer {
   display: flex;
   flex-flow: column nowrap;
-}
 
-.FormContainer h1 {
-  font-size: 1.5em;
-  margin-bottom: 25px;
-  color: $site-blue;
-  padding: 5px 5px 15px 5px;
-  width: 100%;
-  border-bottom: 1px solid #ccc;
+  h1 {
+    font-size: 1.5em;
+    margin-bottom: 25px;
+    color: $site-blue;
+    padding: 5px 5px 15px 5px;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+  }
 }

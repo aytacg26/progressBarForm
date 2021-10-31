@@ -11,18 +11,18 @@
   color: #fff;
   display: flex;
   align-items: center;
+
+  span {
+    font-size: 19px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .Progress {
   background-color: $site-blue;
   height: 50px;
-}
-
-.ProgressContainer span {
-  font-size: 19px;
-  font-weight: bold;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }

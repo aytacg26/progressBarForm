@@ -3,29 +3,29 @@
 
 .formGroup {
   @include form-group;
-}
 
-.formGroup label {
-  @include form-label;
-}
+  label {
+    @include form-label;
+  }
 
-.formGroup input {
-  @include form-element;
-}
+  input {
+    @include form-element;
 
-.formGroup input:focus {
-  @include form-element-focus;
-}
+    &:focus {
+      @include form-element-focus;
+    }
 
-.formGroup input.invalid {
-  border: 1px solid $warning-color;
-  background-color: $warning-background-color;
-}
+    &.invalid {
+      border: 1px solid $warning-color;
+      background-color: $warning-background-color;
 
-.formGroup input.invalid:focus {
-  box-shadow: 0 0 6px $warning-color;
-}
+      &:focus {
+        box-shadow: 0 0 6px $warning-color;
+      }
 
-.formGroup input.invalid::placeholder {
-  color: $invalid-placeholder-color;
+      &::placeholder {
+        color: $invalid-placeholder-color;
+      }
+    }
+  }
 }
