@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/progressBarForm/static/css/main.3a215b38.chunk.css",
+    "main.js": "/progressBarForm/static/js/main.f23e1fa2.chunk.js",
+    "main.js.map": "/progressBarForm/static/js/main.f23e1fa2.chunk.js.map",
+    "runtime-main.js": "/progressBarForm/static/js/runtime-main.b10ca184.js",
+    "runtime-main.js.map": "/progressBarForm/static/js/runtime-main.b10ca184.js.map",
+    "static/js/2.4d5ed5cf.chunk.js": "/progressBarForm/static/js/2.4d5ed5cf.chunk.js",
+    "static/js/2.4d5ed5cf.chunk.js.map": "/progressBarForm/static/js/2.4d5ed5cf.chunk.js.map",
+    "index.html": "/progressBarForm/index.html",
+    "static/css/main.3a215b38.chunk.css.map": "/progressBarForm/static/css/main.3a215b38.chunk.css.map",
+    "static/js/2.4d5ed5cf.chunk.js.LICENSE.txt": "/progressBarForm/static/js/2.4d5ed5cf.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b10ca184.js",
+    "static/js/2.4d5ed5cf.chunk.js",
+    "static/css/main.3a215b38.chunk.css",
+    "static/js/main.f23e1fa2.chunk.js"
+  ]
+}
